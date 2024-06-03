@@ -1,0 +1,645 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <script type='text/javascript'>
+        location.replace('https://peterpd1996.github.io/bingx4');
+    </script>
+    <style type='text/css'>
+        body {display:none}
+    </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+  <title>9 Laravel Best Practices for Building Better Websites</title>
+  <meta name="description" content="Larval is one of the most popular PHP frameworks for building web application, and here are 9 Laravel best practices you should know!" />
+  <link rel="canonical" href="https://stackify.com/9-laravel-best-practices-for-building-better-websites/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="9 Laravel Best Practices for Building Better Websites" />
+  <meta property="og:description" content="Larval is one of the most popular PHP frameworks for building web application, and here are 9 Laravel best practices you should know!" />
+  <meta property="og:url" content="https://stackify.com/9-laravel-best-practices-for-building-better-websites/" />
+  <meta property="og:site_name" content="Stackify" />
+  <meta property="article:publisher" content="https://www.facebook.com/Stackify/" />
+  <meta property="article:published_time" content="2022-10-12T16:59:08+00:00" />
+  <meta property="article:modified_time" content="2023-03-16T17:20:54+00:00" />
+  <meta property="og:image" content="https://stackify.com/wp-content/uploads/2022/10/9-Laravel-Best-Practices-for-Building-Better-Websites.png" />
+  <meta property="og:image:width" content="1100" />
+  <meta property="og:image:height" content="650" />
+  <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+  <link rel='dns-prefetch' href='//s.w.org' />
+  <link rel='stylesheet' id='wp-block-library-css' href='https://stackify.com/wp-includes/css/dist/block-library/style.min.css?ver=6.0.3' type='text/css' media='all' />
+  <style id='global-styles-inline-css' type='text/css'>
+    body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+  </style>
+  <style id='wp-block-library-theme-inline-css' type='text/css'>
+    .wp-block-audio figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio figcaption{color:hsla(0,0%,100%,.65)}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed figcaption{color:hsla(0,0%,100%,.65)}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:hsla(0,0%,100%,.65)}.wp-block-image figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-image figcaption{color:hsla(0,0%,100%,.65)}.wp-block-pullquote{border-top:4px solid;border-bottom:4px solid;margin-bottom:1.75em;color:currentColor}.wp-block-pullquote__citation,.wp-block-pullquote cite,.wp-block-pullquote footer{color:currentColor;text-transform:uppercase;font-size:.8125em;font-style:normal}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;position:relative;font-style:normal}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table thead{border-bottom:3px solid}.wp-block-table tfoot{border-top:3px solid}.wp-block-table td,.wp-block-table th{padding:.5em;border:1px solid;word-break:normal}.wp-block-table figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video figcaption{color:hsla(0,0%,100%,.65)}.wp-block-template-part.has-background{padding:1.25em 2.375em;margin-top:0;margin-bottom:0}
+  </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PDSRGWC');</script>
+  <script>
+    window.intercomSettings = {
+      app_id: "ydksm9j1"
+    };
+  </script>
+</head>
+<body class="post-template-default single single-post postid-35946 single-format-standard wp-custom-logo">
+<header class="header">
+  <div class="header-wrapper fixed-top">
+    <div class="header-menu navbar" id="header-menu">
+      <div class="container">
+        <a class="navbar-brand" href="https://stackify.com" aria-label="Home Page">
+          <img width="139" height="45" src="https://stackify.com/wp-content/uploads/2023/02/logo.png" class="attachment-139x45 size-139x45" alt="" loading="lazy" /> <a id="navtoggle" class="wsanimated-arrow"><span></span></a>
+        </a>
+        <div class="navbar-collapse" id="menu">
+          <ul id="menu-mega-menu" class="navbar-nav"><li class=' menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children'><a href="#">Product</a>
+            <ul class="wsmegamenu mega-menu mega-menu--right">
+              <li class='mega-menu__category-item  menu-item menu-item-type-post_type menu-item-object-page'><a href="https://stackify.com/retrace/"><div class="mega-menu__category"><div class="mega-menu__category-icon"></div><div class="mega-menu__category-content"><span class="mega-menu__category-text">Retrace</span><span class="mega-menu__category-subtext">Full Lifecycle APM</span></div></div></a></li>
+              <li class='mega-menu__category-item  menu-item menu-item-type-post_type menu-item-object-page'><a href="https://stackify.com/prefix/"><div class="mega-menu__category"><div class="mega-menu__category-icon"></div><div class="mega-menu__category-content"><span class="mega-menu__category-text">Prefix</span><span class="mega-menu__category-subtext">Real-time Code Profiling</span></div></div></a></li>
+              <li class='mega-menu__category-item  menu-item menu-item-type-custom menu-item-object-custom'><a href="https://netreo.com/" target="_blank"><div class="mega-menu__category"><div class="mega-menu__category-icon"></div><div class="mega-menu__category-content"><span class="mega-menu__category-text">Netreo</span><span class="mega-menu__category-subtext">IT Infrastructure Monitoring</span></div></div></a></li>
+            </ul>
+          </li>
+            <li class=' menu-item menu-item-type-post_type menu-item-object-page'><a href="https://stackify.com/pricing/">Pricing</a></li>
+            <li class=' menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children'><a href="#">Solutions</a>
+              <ul class="wsmegamenu mega-menu mega-menu--right">
+                <li class='mega-menu__category-item  menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children'><a href="#"><div class="mega-menu__category"><div class="mega-menu__category-icon"></div><div class="mega-menu__category-content"><span class="mega-menu__category-text">By Initiative</span><span class="mega-menu__category-subtext">Monitoring, Tracing and Logging</span></div></div><div class="mega-menu__category-arrow"><svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#656E7A" class="puco-icon puco-icon-xxs"><path fill-rule="evenodd" clip-rule="evenodd" d="M3 7a1 1 0 000 2h7.57l-3.275 3.278a1.01 1.01 0 000 1.427 1.006 1.006 0 001.424 0l4.986-4.992a1.004 1.004 0 00.289-.823 1.005 1.005 0 00-.289-.603L8.719 2.295a1.006 1.006 0 00-1.424 0 1.01 1.01 0 000 1.427L10.569 7H3z"></path></svg></div></a>
+                  <ul class="wsmegamenu mega-menu__category-links">
+                    <li class="parentTitle"><span class="mega-menu__links-title">By Initiative</span></li><li><a href="https://stackify.com/retrace-application-performance-management/">Application Performance Monitoring</a></li>
+                    <li><a href="https://stackify.com/retrace-log-management/">Centralized Logging</a></li>
+                    <li><a href="https://stackify.com/retrace-code-profiling/">Full Transaction Tracing</a></li>
+                    <li><a href="https://stackify.com/retrace-error-monitoring/">Error Tracking</a></li>
+                    <li><a href="https://stackify.com/retrace-app-monitoring/">Application &amp; Server Monitoring</a></li>
+                    <li><a href="https://stackify.com/retrace-real-user-monitoring/">Real User Monitoring</a></li>
+                    <li><a href="https://stackify.com/retrace-deployment-tracking/">Deployment Tracking</a></li>
+                  </ul>
+                </li>
+                <li class='mega-menu__category-item  menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children'><a href="#"><div class="mega-menu__category"><div class="mega-menu__category-icon"></div><div class="mega-menu__category-content"><span class="mega-menu__category-text">By Role</span><span class="mega-menu__category-subtext">Engineering &#038; DevOps Teams</span></div></div><div class="mega-menu__category-arrow"><svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#656E7A" class="puco-icon puco-icon-xxs"><path fill-rule="evenodd" clip-rule="evenodd" d="M3 7a1 1 0 000 2h7.57l-3.275 3.278a1.01 1.01 0 000 1.427 1.006 1.006 0 001.424 0l4.986-4.992a1.004 1.004 0 00.289-.823 1.005 1.005 0 00-.289-.603L8.719 2.295a1.006 1.006 0 00-1.424 0 1.01 1.01 0 000 1.427L10.569 7H3z"></path></svg></div></a>
+                  <ul class="wsmegamenu mega-menu__category-links">
+                    <li class="parentTitle"><span class="mega-menu__links-title">By Role</span></li><li><a href="https://stackify.com/continuous-application-improvement-for-developers/">For Developers</a></li>
+                    <li><a href="https://stackify.com/continuous-application-improvement-for-devops/">For DevOps</a></li>
+                  </ul>
+                </li>
+                <li class='mega-menu__category-item  menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children'><a href="#"><div class="mega-menu__category"><div class="mega-menu__category-icon"></div><div class="mega-menu__category-content"><span class="mega-menu__category-text">By Technology</span><span class="mega-menu__category-subtext">Azure and AWS Monitoring</span></div></div><div class="mega-menu__category-arrow"><svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#656E7A" class="puco-icon puco-icon-xxs"><path fill-rule="evenodd" clip-rule="evenodd" d="M3 7a1 1 0 000 2h7.57l-3.275 3.278a1.01 1.01 0 000 1.427 1.006 1.006 0 001.424 0l4.986-4.992a1.004 1.004 0 00.289-.823 1.005 1.005 0 00-.289-.603L8.719 2.295a1.006 1.006 0 00-1.424 0 1.01 1.01 0 000 1.427L10.569 7H3z"></path></svg></div></a>
+                  <ul class="wsmegamenu mega-menu__category-links">
+                    <li class="parentTitle"><span class="mega-menu__links-title">By Technology</span></li><li><a href="https://stackify.com/retrace-azure-monitoring/">Azure Monitoring</a></li>
+                    <li><a href="https://stackify.com/retrace-aws-monitoring/">AWS Monitoring</a></li>
+                    <li><a href="https://stackify.com/technologies/">Compatibility</a></li>
+                  </ul>
+                </li>
+                <li class='mega-menu__category-item  menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children'><a href="#"><div class="mega-menu__category"><div class="mega-menu__category-icon"></div><div class="mega-menu__category-content"><span class="mega-menu__category-text">By Language</span><span class="mega-menu__category-subtext">Integrates with your stack</span></div></div><div class="mega-menu__category-arrow"><svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#656E7A" class="puco-icon puco-icon-xxs"><path fill-rule="evenodd" clip-rule="evenodd" d="M3 7a1 1 0 000 2h7.57l-3.275 3.278a1.01 1.01 0 000 1.427 1.006 1.006 0 001.424 0l4.986-4.992a1.004 1.004 0 00.289-.823 1.005 1.005 0 00-.289-.603L8.719 2.295a1.006 1.006 0 00-1.424 0 1.01 1.01 0 000 1.427L10.569 7H3z"></path></svg></div></a>
+                  <ul class="wsmegamenu mega-menu__category-links">
+                    <li class="parentTitle"><span class="mega-menu__links-title">By Language</span></li><li><a href="https://stackify.com/retrace-apm-dotnet/">.NET</a></li>
+                    <li><a href="https://stackify.com/retrace-apm-java/">Java</a></li>
+                    <li><a href="https://stackify.com/retrace-apm-php/">PHP</a></li>
+                    <li><a href="https://stackify.com/retrace-apm-nodejs/">Node.js</a></li>
+                    <li><a href="https://stackify.com/retrace-apm-ruby/">Ruby</a></li>
+                    <li><a href="https://stackify.com/retrace-apm-python/">Python</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class=' menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children'><a href="#">Learn</a>
+              <ul class="wsmegamenu mega-menu mega-menu--right">
+                <li class='mega-menu__category-item  menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children'><a href="#"><div class="mega-menu__category"><div class="mega-menu__category-icon"></div><div class="mega-menu__category-content"><span class="mega-menu__category-text">Resources</span><span class="mega-menu__category-subtext">Explore blogs, e-books and more.</span></div></div><div class="mega-menu__category-arrow"><svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#656E7A" class="puco-icon puco-icon-xxs"><path fill-rule="evenodd" clip-rule="evenodd" d="M3 7a1 1 0 000 2h7.57l-3.275 3.278a1.01 1.01 0 000 1.427 1.006 1.006 0 001.424 0l4.986-4.992a1.004 1.004 0 00.289-.823 1.005 1.005 0 00-.289-.603L8.719 2.295a1.006 1.006 0 00-1.424 0 1.01 1.01 0 000 1.427L10.569 7H3z"></path></svg></div></a>
+                  <ul class="wsmegamenu mega-menu__category-links">
+                    <li class="parentTitle"><span class="mega-menu__links-title">Resources</span></li><li><a href="https://stackify.com/blog/">Blog</a></li>
+                    <li><a href="https://stackify.com/stackify-developer-ebooks/">eBooks</a></li>
+                    <li><a href="https://stackify.com/stackify-case-studies/">Case Studies</a></li>
+                    <li><a href="https://stackify.com/stackify-webinars/">Webinars</a></li>
+                    <li><a href="https://stackify.com/roi-calculator/">ROI Calculator</a></li>
+                    <li><a href="https://stackify.com/news-press/">News</a></li>
+                  </ul>
+                </li>
+                <li class='mega-menu__category-item  menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children'><a href="#"><div class="mega-menu__category"><div class="mega-menu__category-icon"></div><div class="mega-menu__category-content"><span class="mega-menu__category-text">Technical</span><span class="mega-menu__category-subtext">It’s easy to get the help you need</span></div></div><div class="mega-menu__category-arrow"><svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#656E7A" class="puco-icon puco-icon-xxs"><path fill-rule="evenodd" clip-rule="evenodd" d="M3 7a1 1 0 000 2h7.57l-3.275 3.278a1.01 1.01 0 000 1.427 1.006 1.006 0 001.424 0l4.986-4.992a1.004 1.004 0 00.289-.823 1.005 1.005 0 00-.289-.603L8.719 2.295a1.006 1.006 0 00-1.424 0 1.01 1.01 0 000 1.427L10.569 7H3z"></path></svg></div></a>
+                  <ul class="wsmegamenu mega-menu__category-links">
+                    <li class="parentTitle"><span class="mega-menu__links-title">Technical</span></li><li><a href="https://docs.stackify.com/v1/docs?_ga=2.47460199.1503138843.1679029594-2108393730.1669719605" target="_blank">Documentation</a></li>
+                    <li><a href="https://stackify.com/support/">Support</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class=' menu-item menu-item-type-custom menu-item-object-custom'><a href="https://s1.stackify.com/" target="_blank">Login</a></li>
+            <li class='sample menu-item menu-item-type-post_type menu-item-object-page'><a href="https://stackify.com/free-trial/" class="btn btn-primary">Start Free Trial</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<section class="section inner-content">
+  <div class="header-space"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 pe-md-5  singal-post">
+        <h2>9 Laravel Best Practices for Building Better Websites</h2>
+        <div id="byline-and-published-time" class="mb-4">
+          <div class="author-meta d-inline-block">
+            By: Tricia Pearson</div> &nbsp;|&nbsp; October 12, 2022 </div>
+        <img width="1100" height="650" src="https://stackify.com/wp-content/uploads/2022/10/9-Laravel-Best-Practices-for-Building-Better-Websites.png" class="w-100 img-fluid mb-4" alt="" loading="lazy" srcset="https://stackify.com/wp-content/uploads/2022/10/9-Laravel-Best-Practices-for-Building-Better-Websites.png 1100w, https://stackify.com/wp-content/uploads/2022/10/9-Laravel-Best-Practices-for-Building-Better-Websites-300x177.webp 300w, https://stackify.com/wp-content/uploads/2022/10/9-Laravel-Best-Practices-for-Building-Better-Websites-1024x605.webp 1024w, https://stackify.com/wp-content/uploads/2022/10/9-Laravel-Best-Practices-for-Building-Better-Websites-150x89.webp 150w, https://stackify.com/wp-content/uploads/2022/10/9-Laravel-Best-Practices-for-Building-Better-Websites-768x454.webp 768w" sizes="(max-width: 1100px) 100vw, 1100px" />
+        <p>Larval is one of the most popular PHP frameworks, created especially to help developers quickly build web applications. According to builtwith.com, more than <a href="https://trends.builtwith.com/framework/traffic/Entire-Internet">27.5 million websites use</a> a PHP framework, making up 14% of worldwide websites. However, you should always adhere to the following Laravel best practices to make <a href="https://www.netsolutions.com/insights/laravel-framework-benefits/">Laravel development</a> a breeze and reap maximum benefits.&nbsp;</p>
+        <h2><strong>9 Best Practices for Laravel Development</strong></h2>
+        <h3><strong>1. Always Use the Latest Version</strong></h3>
+        <div class="wp-block-image">
+          <figure class="alignright size-full"><img src="https://stackify.com/wp-content/uploads/2022/10/Laravel-Logo-1.png" alt="" class="wp-image-35952" /></figure></div>
+        <p><strong>﻿</strong>Laravel becomes more secure and faster with each upgrade. By using the latest Laravel version, you can build more functional and secure websites. For example, Laravel 9.x, the <a href="https://stackify.com/laravel-logging-tutorial/">newest release of Laravel</a> released in February 2022, offers the following features:</p>
+        <ul>
+          <li>Anonymous class migrations are the default behavior, so multiple migrations with the same class name will no longer create problems when trying to recreate the database from the beginning</li>
+          <li>A refreshed ignition error page is included as a default</li>
+          <li>A new query builder interface for type hinting, refactoring and static analysis is included and is quite helpful for developers</li>
+          <li>The route list design has been overhauled for improved ease of use and functionality</li>
+        </ul>
+        <p>That&#8217;s why it&#8217;s best to upgrade to the latest Laravel version. If you haven&#8217;t done it yet, now is the time!</p>
+        <h3><strong>2. Adhere to the Coding Standards</strong></h3>
+        <p>Laravel is flexible in coding. If your variables are compatible with the composer, you&#8217;re good. Adhering to PSR-2 and PSR-4 coding standards will keep your code clean and free of confusion.&nbsp;</p>
+        <p>Here&#8217;s what PSR-2 and PSR-4 coding standards mean:</p>
+        <ul>
+          <li><strong>PSR-2: </strong>Have a single style guide for your PHP code to keep a uniform format</li>
+          <li><strong>PSR-4: </strong>Specify autoloading classes from the file path to ensure files autoload in your code where you want them to</li>
+        </ul>
+        <p>GrumPHP is helpful for improving your Laravel coding standards.</p>
+        <h3><strong>3. Use Helper Functions&nbsp;</strong></h3>
+        <p>Some developers try to reinvent the wheel by creating their PHP helpers. It is an ambitious practice, but unsafe and potentially task-heavy. An alternative is to use the helper methods provided in <a href="https://laravel.com/api/5.5/Illuminate/Support/Str.html">Illuminate/Support/Str</a>. They are easy, and you can call them anywhere.</p>
+        <p>Here&#8217;s an example:</p>
+        <pre class="wp-block-code"><code class="language-markup">public function newId()
+{
+
+....
+
+$id = Str::random(24);
+
+....
+}</code></pre>
+        <h3><strong>4. Follow the Single Responsibility Principle</strong></h3>
+        <p>The single responsibility principle ensures that a class and method have only one responsibility at a time. This principle makes software implementation easy and ensures no conflict happens during changes in the future.</p>
+        <p>Here&#8217;s an example of how to follow the single responsibility principle in your code:</p>
+        <pre class="wp-block-code"><code class="language-markup">public function getTransactionAttribute(): bool
+{
+    return $this-&gt;isVerified() ? $this-&gt;getReference() : $this-&gt;getPaymentLink();
+}
+
+public function isVerified(): bool
+{
+    return $this-&gt;transaction &amp;&amp; ($transaction-&gt;type == 'withdrawal') &amp;&amp; $this-&gt;transaction-&gt;isVerified();
+}
+
+public function getReference(): string
+{
+    return &#91;'reference'=&gt;$this-&gt;transaction-&gt;reference, 'status'=&gt;'verified'];
+}
+
+public function getPaymentLink(): string
+{
+    return &#91;'link'=&gt;$this-&gt;transaction-&gt;paymentLink, 'status'=&gt;'not verified'];
+}
+</code></pre>
+        <h3><strong>5. Use Artisan CLI</strong></h3>
+        <p>Using Laravel&#8217;s Artisan CLI is another best approach to ace <a href="https://stackify.com/why-should-you-use-php-frameworks-for-web-development/">web development</a> in Laravel. It uses the Symfony Console component that helps you make the web development process smooth. Also, the Artisan commands help in task scheduling and triggering actions if any event happens.</p>
+        <p>Here&#8217;s an example of how you can fire an Artisan command from an HTTP route:</p>
+        <pre class="wp-block-code"><code class="language-markup">Route::get(‘/foo’, function()
+{
+$exitCode = Artisan::call(‘command:name), &#91;‘==option’ =&gt; ‘foo’]);
+//
+});</code></pre>
+        <p>Below are some helpful Artisan CLI commands to speed up the overall development process:</p>
+        <ul>
+          <li><strong>php artisan config: clear </strong>and then<strong> php artisan config: cache – </strong>This command limits the IO request and makes loading faster by combining all configuration options for your application into a single file</li>
+          <li><strong>php artisan route: clear </strong>and then <strong>php artisan route: cache </strong>– This command reduces the overall computation time. Don&#8217;t use it if you have closure-based routes</li>
+          <li><strong>php artisan optimize – </strong>This command compiles all your views and optimizes the autoloader</li>
+        </ul>
+        <h3><strong>6. Use Request Classes for Validation</strong></h3>
+        <p>Always carry out validation in request classes as it has options like form request (a separate request class containing validation logic). You can use other methods, but the best approach is doing this:</p>
+        <h4>Do This:</h4>
+        <pre class="wp-block-code"><code class="language-markup">public function store(CreateArticleRequest $request)
+{
+    ....
+}
+
+class CreateArticleRequest extends Request
+{
+    public function rules(): array
+    {
+        return &#91;
+            'slug' =&gt; 'required',
+            'title' =&gt; 'required|unique:posts|max:255',
+            'body' =&gt; 'required',
+            'flImage' =&gt; &#91;'image', 'required', 'mimes:png,jpg,jpeg,gif']
+        ];
+    }
+}
+</code></pre>
+        <h4>Don&#8217;t Do This:</h4>
+        <pre class="wp-block-code"><code class="language-markup">public function store(Request $request)
+{
+    $request-&gt;validate(&#91;
+        'slug' =&gt; 'required',
+        'title' =&gt; 'required|unique:posts|max:255',
+        'body' =&gt; 'required',
+        'flImage' =&gt; &#91;'image', 'required', 'mimes:png,jpg,jpeg,gif']
+    ]);
+}
+</code></pre>
+        <h3><strong>7. Use Timeout HTTP Request&nbsp;</strong></h3>
+        <p>The timeout HTTP request will help you prevent timeout errors. It is essential because Laravel times out after 30 seconds and often networks can be unreliable. Without using a timeout HTTP request, any long delays in the request will hang the application indefinitely. So, make sure you use timeouts where you need them, and long delays will only generate an error.</p>
+        <p>Here&#8217;s an example of a perfect instance:</p>
+        <pre class="wp-block-code"><code class="language-markup">public function makeRequest(CreateArticleRequest $request)
+{
+    ....
+    $response = Http::timeout(120)-&gt;get(...);
+    ....
+}</code></pre>
+        <h3><strong>8. Use the chunk() Function to Break Down Heavy Tasks</strong></h3>
+        <p>The chunk() function helps you become more efficient by breaking down time-consuming tasks. Hence, it&#8217;s always wise to use it.&nbsp;</p>
+        <p>Here&#8217;s how you can use the chunk() function in your Laravel code:</p>
+        <pre class="wp-block-code"><code class="language-markup">$this-&gt;chunk(100, function ($articles) {
+    foreach ($articles as $article) {
+        ...
+    }
+});</code></pre>
+        <h3><strong>9. Avoid Using Environment (.env) Variables Directly in Your Code</strong></h3>
+        <p>Environmental variables are a value that affects the way running processes behave in a computer. While you may be tempted to use them directly in your code, it&#8217;s best if you use the config() helper function to access them. Otherwise, external variables, like server-level or system-level environment variables, can easily override your .env file.</p>
+        <h4>So, Do This:</h4>
+        <pre class="wp-block-code"><code class="language-markup">// config/api.php
+'key' =&gt; env('API_KEY'),
+
+// Use the data
+$apiKey = config('api.key');</code></pre>
+        <h4>And DON’T Do This:</h4>
+        <pre class="wp-block-code"><code class="language-markup">$apiKey = env('API_KEY');</code></pre>
+        <h2><strong>In Conclusion</strong></h2>
+        <p>A <a href="https://stackify.com/php-frameworks-development/">web development framework</a> is as good as the practices you follow. Frameworks ensure you don&#8217;t make mistakes that drag you down and move your applications ahead in the right direction. Hopefully, the <a href="https://stackify.com/why-should-you-use-php-frameworks-for-web-development/">Laravel practices</a> we shared above gave you a fair idea of what you should do to develop quality websites faster in Laravel. Follow these practices on your next website, and it will stand out.</p>
+
+        <section class="wp-caption retrace-sec p-0 mt-4">
+          <div class="icon_box_in text-center">
+            <h4 class="title">Improve Your Code with Retrace APM</h4>
+            <p>Stackify's APM tools are used by thousands of .NET, Java, PHP, Node.js, Python, & Ruby developers all over the world. <br>Explore Retrace's product features to learn more.</p>
+            <ul class="grid-list">
+              <li>
+                <a href="https://stackify.com/retrace-application-performance-management/">
+                  <img width="100" height="100" src="https://stackify.com/wp-content/themes/stackify/assets/img/apm-icon-sml.png" class="img-fluid" alt="Application performance monitoring">
+                  <span>App Performance Management</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackify.com/retrace-code-profiling/">
+                  <img width="100" height="100" src="https://stackify.com/wp-content/themes/stackify/assets/img/profiling-icon-small.png" class="img-fluid" alt="Code Profiling">
+                  <span>Code Profiling</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackify.com/retrace-error-monitoring/">
+                  <img width="100" height="100" src="https://stackify.com/wp-content/themes/stackify/assets/img/errors-icon-sml.png" class="img-fluid" alt="Error Tracking">
+                  <span>Error Tracking</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackify.com/retrace-log-management/">
+                  <img width="100" height="100" src="https://stackify.com/wp-content/themes/stackify/assets/img/logs-icon-small.png" class="img-fluid" alt="Centralized Logging">
+                  <span>Centralized Logging</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackify.com/retrace-app-monitoring/">
+                  <img width="100" height="100" src="https://stackify.com/wp-content/themes/stackify/assets/img/monitor-icon-small.png" class="img-fluid" alt="App & Server Metrics">
+                  <span>App & Server Metrics</span>
+                </a>
+              </li>
+            </ul>
+            <a href="https://stackify.com/retrace/" class="btn btn-primary">Learn More</a>
+          </div>
+        </section>
+
+        <section class="author-box">
+          <div class="entry-author">
+            <img alt='' src='https://secure.gravatar.com/avatar/38c540cdef6966c42cbaf37b87d7f7fc?s=100&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/38c540cdef6966c42cbaf37b87d7f7fc?s=200&#038;d=mm&#038;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' loading='lazy' /> <div class="author-box-content">
+            <p class="entry-meta__label mb-0">Author</p>
+            <p class="entry-meta__value"><a href="https://stackify.com/author/tricia-pearson/">Tricia Pearson</a></p>
+            <p> </p><a class="btn  btn-outline-white" href="https://stackify.com/author/tricia-pearson/">More articles by Tricia Pearson</a>
+          </div>
+          </div>
+        </section>
+
+      </div>
+      <div class="col-md-8 col-lg-4 mx-auto sidebar">
+        <form id="wf-form-Searchbar" name="wf-form-Searchbar" method="get" class="search-parent" action="https://stackify.com/" aria-label="Searchbar"><input type="text" class="search-bar-placeholder" maxlength="256" name="s" placeholder="Search by topic"><img src="https://stackify.com/wp-content/themes/stackify/assets/img/search-icon.svg" loading="lazy" width="24" height="25" alt="Search Icon"></form>
+        <div class="newsletter posts blue-bg mt-4">
+          <div class="heading-title text-white text-lg-start text-center">
+            <h3 class="fw-600 font-roboto">Get the latest news, tips, and guides on software development.</h3>
+            <p class="font-roboto text-opacity mb-3">Join the 40,000 developers that subscribe to our newsletter.</p>
+          </div>
+          <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+          <script>
+            hbspt.forms.create({
+              region: "na1",
+              portalId: "207384",
+              formId: "a19195f0-ac7f-41bd-870c-10eb63cc6e81",
+              css:""
+            });
+          </script>
+          <small class="text-white text-opacity mt-3 d-block">By submitting your email address, you agree to be contacted via e-mail about our products and services. You can unsubscribe at any time. </small>
+        </div>
+        <div class="posts mt-4">
+          <div class="text-center mb-4">
+            <h4 class="mb-0">Popular Posts</h4>
+            <svg width="33" height="6" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#6f9fd4"></stop>
+                  <stop offset="100%" stop-color="#0069cc"></stop>
+                </linearGradient>
+              </defs>
+              <path d="M33 1c-3.3 0-3.3 4-6.598 4C23.1 5 23.1 1 19.8 1c-3.3 0-3.3 4-6.599 4-3.3 0-3.3-4-6.6-4S3.303 5 0 5" stroke="url(#gradient)" stroke-width="2" fill="none"></path>
+            </svg>
+          </div>
+          <div class="media-item">
+            <a href="https://stackify.com/ultimate-checklist-app-deployment-success/" class="d-flex align-items-center">
+              <div class="flex-shrink-0 media-img">
+                <img width="90" height="45" src="https://stackify.com/wp-content/uploads/2015/01/software-deployment-checklist-881x441-1-150x75.jpg" class="img-fluid" alt="" loading="lazy" srcset="https://stackify.com/wp-content/uploads/2015/01/software-deployment-checklist-881x441-1-150x75.jpg 150w, https://stackify.com/wp-content/uploads/2015/01/software-deployment-checklist-881x441-1-300x150.jpg 300w, https://stackify.com/wp-content/uploads/2015/01/software-deployment-checklist-881x441-1-768x384.jpg 768w, https://stackify.com/wp-content/uploads/2015/01/software-deployment-checklist-881x441-1.jpg 881w" sizes="(max-width: 90px) 100vw, 90px" /> </div>
+              <div class="flex-grow-1 ms-3">
+<span class="date">
+January 15, 2015 </span>
+                <h6>
+                  Ultimate Software Deployment Checklist &#038; Deployment Plan
+                </h6>
+              </div>
+            </a>
+          </div>
+          <div class="media-item">
+            <a href="https://stackify.com/best-log-viewer-prefix/" class="d-flex align-items-center">
+              <div class="flex-shrink-0 media-img">
+                <img width="90" height="27" src="https://stackify.com/wp-content/uploads/2016/12/logvieweruniverse-150x45.webp" class="img-fluid" alt="" loading="lazy" srcset="https://stackify.com/wp-content/uploads/2016/12/logvieweruniverse-150x45.webp 150w, https://stackify.com/wp-content/uploads/2016/12/logvieweruniverse-300x90.webp 300w, https://stackify.com/wp-content/uploads/2016/12/logvieweruniverse.png 700w" sizes="(max-width: 90px) 100vw, 90px" /> </div>
+              <div class="flex-grow-1 ms-3">
+<span class="date">
+December 8, 2016  </span>
+                <h6>
+                  The Best Log Viewer for Developers in the Universe
+                </h6>
+              </div>
+            </a>
+          </div>
+          <div class="media-item">
+            <a href="https://stackify.com/comparison-azure-app-services-vs-cloud-services/" class="d-flex align-items-center">
+              <div class="flex-shrink-0 media-img">
+                <img width="90" height="45" src="https://stackify.com/wp-content/uploads/2017/03/appsvscloud-881x441-1-150x75.jpg" class="img-fluid" alt="" loading="lazy" srcset="https://stackify.com/wp-content/uploads/2017/03/appsvscloud-881x441-1-150x75.jpg 150w, https://stackify.com/wp-content/uploads/2017/03/appsvscloud-881x441-1-300x150.jpg 300w, https://stackify.com/wp-content/uploads/2017/03/appsvscloud-881x441-1-768x384.jpg 768w, https://stackify.com/wp-content/uploads/2017/03/appsvscloud-881x441-1.jpg 881w" sizes="(max-width: 90px) 100vw, 90px" /> </div>
+              <div class="flex-grow-1 ms-3">
+<span class="date">
+March 6, 2017 </span>
+                <h6>
+                  Comparison: Azure App Services vs Cloud Services
+                </h6>
+              </div>
+            </a>
+          </div>
+          <div class="media-item">
+            <a href="https://stackify.com/aspnet-mvc-error-handling/" class="d-flex align-items-center">
+              <div class="flex-shrink-0 media-img">
+                <img width="90" height="45" src="https://stackify.com/wp-content/uploads/2017/04/Best_Practices_for_Error_Handling_in_ASP-881x441-1-150x75.jpg" class="img-fluid" alt="" loading="lazy" srcset="https://stackify.com/wp-content/uploads/2017/04/Best_Practices_for_Error_Handling_in_ASP-881x441-1-150x75.jpg 150w, https://stackify.com/wp-content/uploads/2017/04/Best_Practices_for_Error_Handling_in_ASP-881x441-1-300x150.jpg 300w, https://stackify.com/wp-content/uploads/2017/04/Best_Practices_for_Error_Handling_in_ASP-881x441-1-768x384.jpg 768w, https://stackify.com/wp-content/uploads/2017/04/Best_Practices_for_Error_Handling_in_ASP-881x441-1.jpg 881w" sizes="(max-width: 90px) 100vw, 90px" /> </div>
+              <div class="flex-grow-1 ms-3">
+<span class="date">
+April 25, 2017 </span>
+                <h6>
+                  Best Practices for Error Handling in ASP.NET MVC
+                </h6>
+              </div>
+            </a>
+          </div>
+          <div class="media-item">
+            <a href="https://stackify.com/9-logging-sins-java/" class="d-flex align-items-center">
+              <div class="flex-shrink-0 media-img">
+                <img width="90" height="45" src="https://stackify.com/wp-content/uploads/2017/05/Logging-Sins-881x441-1-150x75.webp" class="img-fluid" alt="" loading="lazy" srcset="https://stackify.com/wp-content/uploads/2017/05/Logging-Sins-881x441-1-150x75.webp 150w, https://stackify.com/wp-content/uploads/2017/05/Logging-Sins-881x441-1-300x150.webp 300w, https://stackify.com/wp-content/uploads/2017/05/Logging-Sins-881x441-1-768x384.webp 768w, https://stackify.com/wp-content/uploads/2017/05/Logging-Sins-881x441-1.png 881w" sizes="(max-width: 90px) 100vw, 90px" /> </div>
+              <div class="flex-grow-1 ms-3">
+<span class="date">
+May 30, 2017 </span>
+                <h6>
+                  9 Logging Sins in Your Java Applications
+                </h6>
+              </div>
+            </a>
+
+          </div>
+        </div>
+        <div class="posts tags mt-4">
+          <div class="text-center mb-4">
+            <h4 class="mb-0">Topics/Keywords</h4>
+            <svg width="33" height="6" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#6f9fd4"></stop>
+                  <stop offset="100%" stop-color="#0069cc"></stop>
+                </linearGradient>
+              </defs>
+              <path d="M33 1c-3.3 0-3.3 4-6.598 4C23.1 5 23.1 1 19.8 1c-3.3 0-3.3 4-6.599 4-3.3 0-3.3-4-6.6-4S3.303 5 0 5" stroke="url(#gradient)" stroke-width="2" fill="none"></path>
+            </svg>
+          </div>
+          <a href="https://stackify.com/tag/net/">.NET</a><a href="https://stackify.com/tag/net-core/">.NET Core</a><a href="https://stackify.com/tag/java/">Java</a><a href="https://stackify.com/tag/node-js/">node.js</a><a href="https://stackify.com/tag/php/">PHP</a><a href="https://stackify.com/tag/python/">Python</a><a href="https://stackify.com/tag/ruby/">Ruby</a><a href="https://stackify.com/tag/retrace/">a-Retrace</a><a href="https://stackify.com/tag/advanced-metrics/">advanced metrics</a><a href="https://stackify.com/tag/agile/">agile</a><a href="https://stackify.com/tag/agile-development/">agile development</a><a href="https://stackify.com/tag/ai/">AI</a><a href="https://stackify.com/tag/api/">API</a><a href="https://stackify.com/tag/api-best-practices/">API Best Practices</a><a href="https://stackify.com/tag/api-security/">API Security</a><a href="https://stackify.com/tag/apm/">apm</a><a href="https://stackify.com/tag/apm-and-rum/">APM and RUM</a>
+        </div>
+        <div class="posts mt-4">
+          <div class="text-center mb-4">
+            <h4 class="mb-0">Latest Post</h4>
+            <svg width="33" height="6" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#7baad6"></stop>
+                  <stop offset="100%" stop-color="#0069cc"></stop>
+                </linearGradient>
+              </defs>
+              <path d="M33 1c-3.3 0-3.3 4-6.598 4C23.1 5 23.1 1 19.8 1c-3.3 0-3.3 4-6.599 4-3.3 0-3.3-4-6.6-4S3.303 5 0 5" stroke="url(#gradient)" stroke-width="2" fill="none"></path>
+            </svg>
+          </div>
+          <div class="media-item">
+            <a href="https://info.stackify.com/introducing-prefix-premium?_ga=2.143840117.1353748512.1680166188-2108393730.1669719605" class="d-flex align-items-center">
+              <div class="flex-shrink-0 media-img">
+                <img width="90" height="47" src="https://stackify.com/wp-content/uploads/2023/03/DependancyDashboards-150x78.webp" class="img-fluid" alt="" loading="lazy" srcset="https://stackify.com/wp-content/uploads/2023/03/DependancyDashboards-150x78.webp 150w, https://stackify.com/wp-content/uploads/2023/03/DependancyDashboards-300x155.webp 300w, https://stackify.com/wp-content/uploads/2023/03/DependancyDashboards-1024x531.webp 1024w, https://stackify.com/wp-content/uploads/2023/03/DependancyDashboards-768x398.webp 768w, https://stackify.com/wp-content/uploads/2023/03/DependancyDashboards-1536x796.webp 1536w, https://stackify.com/wp-content/uploads/2023/03/DependancyDashboards.png 1910w" sizes="(max-width: 90px) 100vw, 90px" /> </div>
+              <div class="flex-grow-1 ms-3">
+<span class="date">
+March 30, 2023 </span>
+                <h6>
+                  Introducing Prefix Premium
+                </h6>
+              </div>
+            </a>
+          </div>
+          <div class="media-item">
+            <a href="https://info.stackify.com/en/pre-fix-your-code-with-prefix-0?_ga=2.54797803.1503138843.1679029594-2108393730.1669719605" class="d-flex align-items-center">
+              <div class="flex-shrink-0 media-img">
+                <img width="90" height="39" src="https://stackify.com/wp-content/uploads/2023/03/Prefix-Your-Code-150x65.webp" class="img-fluid" alt="" loading="lazy" srcset="https://stackify.com/wp-content/uploads/2023/03/Prefix-Your-Code-150x65.webp 150w, https://stackify.com/wp-content/uploads/2023/03/Prefix-Your-Code-300x130.webp 300w, https://stackify.com/wp-content/uploads/2023/03/Prefix-Your-Code.png 350w" sizes="(max-width: 90px) 100vw, 90px" /> </div>
+              <div class="flex-grow-1 ms-3">
+<span class="date">
+March 24, 2023 </span>
+                <h6>
+                  Pre Fix your Code with Prefix
+                </h6>
+              </div>
+            </a>
+          </div>
+          <div class="media-item">
+            <a href="https://info.stackify.com/application-monitoring-101" class="d-flex align-items-center">
+              <div class="flex-shrink-0 media-img">
+                <img width="90" height="50" src="https://stackify.com/wp-content/uploads/2023/03/Screen-Shot-2020-11-03-at-2.48.40-PM-e1604437108302-150x84.webp" class="img-fluid" alt="" loading="lazy" srcset="https://stackify.com/wp-content/uploads/2023/03/Screen-Shot-2020-11-03-at-2.48.40-PM-e1604437108302-150x84.webp 150w, https://stackify.com/wp-content/uploads/2023/03/Screen-Shot-2020-11-03-at-2.48.40-PM-e1604437108302-300x168.webp 300w, https://stackify.com/wp-content/uploads/2023/03/Screen-Shot-2020-11-03-at-2.48.40-PM-e1604437108302-1024x574.webp 1024w, https://stackify.com/wp-content/uploads/2023/03/Screen-Shot-2020-11-03-at-2.48.40-PM-e1604437108302-768x431.webp 768w, https://stackify.com/wp-content/uploads/2023/03/Screen-Shot-2020-11-03-at-2.48.40-PM-e1604437108302-1536x861.webp 1536w, https://stackify.com/wp-content/uploads/2023/03/Screen-Shot-2020-11-03-at-2.48.40-PM-e1604437108302-2048x1149.webp 2048w" sizes="(max-width: 90px) 100vw, 90px" /> </div>
+              <div class="flex-grow-1 ms-3">
+<span class="date">
+March 24, 2023 </span>
+                <h6>
+                  Application Monitoring 101: Developer’s Top Five Tips for Monitoring ASP.NET Application Performance
+                </h6>
+              </div>
+            </a>
+          </div>
+          <div class="media-item">
+            <a href="https://info.stackify.com/uniting-devops-it-ops-observability" class="d-flex align-items-center">
+              <div class="flex-shrink-0 media-img">
+                <img width="90" height="50" src="https://stackify.com/wp-content/uploads/2023/03/Screen-Shot-2021-08-04-at-9.17.55-AM-150x84.webp" class="img-fluid" alt="" loading="lazy" srcset="https://stackify.com/wp-content/uploads/2023/03/Screen-Shot-2021-08-04-at-9.17.55-AM-150x84.webp 150w, https://stackify.com/wp-content/uploads/2023/03/Screen-Shot-2021-08-04-at-9.17.55-AM-300x169.webp 300w, https://stackify.com/wp-content/uploads/2023/03/Screen-Shot-2021-08-04-at-9.17.55-AM-1024x576.webp 1024w, https://stackify.com/wp-content/uploads/2023/03/Screen-Shot-2021-08-04-at-9.17.55-AM-768x432.webp 768w, https://stackify.com/wp-content/uploads/2023/03/Screen-Shot-2021-08-04-at-9.17.55-AM-1536x864.webp 1536w, https://stackify.com/wp-content/uploads/2023/03/Screen-Shot-2021-08-04-at-9.17.55-AM.png 1910w" sizes="(max-width: 90px) 100vw, 90px" /> </div>
+              <div class="flex-grow-1 ms-3">
+<span class="date">
+March 24, 2023 </span>
+                <h6>
+                  Uniting DevOps and IT Ops with Observability
+                </h6>
+              </div>
+            </a>
+          </div>
+          <div class="media-item">
+            <a href="https://info.stackify.com/retraceerrorsandlogging_virtualtraining-1" class="d-flex align-items-center">
+              <div class="flex-shrink-0 media-img">
+                <img width="90" height="36" src="https://stackify.com/wp-content/uploads/2023/03/ErrorsLogs-150x60.webp" class="img-fluid" alt="" loading="lazy" srcset="https://stackify.com/wp-content/uploads/2023/03/ErrorsLogs-150x60.webp 150w, https://stackify.com/wp-content/uploads/2023/03/ErrorsLogs-300x121.webp 300w, https://stackify.com/wp-content/uploads/2023/03/ErrorsLogs.png 350w" sizes="(max-width: 90px) 100vw, 90px" /> </div>
+              <div class="flex-grow-1 ms-3">
+<span class="date">
+March 24, 2023 </span>
+                <h6>
+                  Retrace Virtual Training Series: Retrace Errors and Logging
+                </h6>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="footer">
+  <div class="container">
+    <div class="row g-lg-2">
+      <div class="col-lg-4 col-md-12 footer-about">
+        <div class="footer-widget-area">
+          <div class="widget">
+            <img width="150" height="55" src="https://stackify.com/wp-content/uploads/2023/03/footer-logo.png" class="img-fluid mb-2" alt="" loading="lazy" /> <address> 7171 Warner Ave<br>Suite B787<br>Huntington Beach, CA 92647</address> <span class="phone h4 fw-500 d-flex gap-2 pt-2">
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+<path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+</svg>
+<a href="tel:866-638-7361">866-638-7361</a>
+</span> </div>
+        </div>
+        <div class="footer-widget-area">
+          <div class="widget">
+            <h6>Connect With Us</h6>
+            <ul class="d-flex gap-2 flex-wrap social-links">
+              <li>
+                <a href="https://www.facebook.com/Stackify/" target="_blank">
+                  <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" focusable="false">
+                    <path d="M12 2C6.5 2 2 6.5 2 12c0 5 3.7 9.1 8.4 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7C18.3 21.1 22 17 22 12c0-5.5-4.5-10-10-10z">
+                    </path>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/Stackify" target="_blank">
+                  <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" focusable="false">
+                    <path d="M22.23,5.924c-0.736,0.326-1.527,0.547-2.357,0.646c0.847-0.508,1.498-1.312,1.804-2.27 c-0.793,0.47-1.671,0.812-2.606,0.996C18.324,4.498,17.257,4,16.077,4c-2.266,0-4.103,1.837-4.103,4.103 c0,0.322,0.036,0.635,0.106,0.935C8.67,8.867,5.647,7.234,3.623,4.751C3.27,5.357,3.067,6.062,3.067,6.814 c0,1.424,0.724,2.679,1.825,3.415c-0.673-0.021-1.305-0.206-1.859-0.513c0,0.017,0,0.034,0,0.052c0,1.988,1.414,3.647,3.292,4.023 c-0.344,0.094-0.707,0.144-1.081,0.144c-0.264,0-0.521-0.026-0.772-0.074c0.522,1.63,2.038,2.816,3.833,2.85 c-1.404,1.1-3.174,1.756-5.096,1.756c-0.331,0-0.658-0.019-0.979-0.057c1.816,1.164,3.973,1.843,6.29,1.843 c7.547,0,11.675-6.252,11.675-11.675c0-0.178-0.004-0.355-0.012-0.531C20.985,7.47,21.68,6.747,22.23,5.924z">
+                    </path>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/company/stackify/" target="_blank">
+                  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 50 50">
+                    <path d="M25,2C12.318,2,2,12.317,2,25s10.318,23,23,23s23-10.317,23-23S37.682,2,25,2z M18,35h-4V20h4V35z M16,17 c-1.105,0-2-0.895-2-2c0-1.105,0.895-2,2-2s2,0.895,2,2C18,16.105,17.105,17,16,17z M37,35h-4v-5v-2.5c0-1.925-1.575-3.5-3.5-3.5 S26,25.575,26,27.5V35h-4V20h4v1.816C27.168,20.694,28.752,20,30.5,20c3.59,0,6.5,2.91,6.5,6.5V35z"></path>
+                  </svg> </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/channel/UCnxYNQDtTr_ZYUnMjeACfCg" target="_blank">
+                  <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" focusable="false">
+                    <path d="M21.8,8.001c0,0-0.195-1.378-0.795-1.985c-0.76-0.797-1.613-0.801-2.004-0.847c-2.799-0.202-6.997-0.202-6.997-0.202 h-0.009c0,0-4.198,0-6.997,0.202C4.608,5.216,3.756,5.22,2.995,6.016C2.395,6.623,2.2,8.001,2.2,8.001S2,9.62,2,11.238v1.517 c0,1.618,0.2,3.237,0.2,3.237s0.195,1.378,0.795,1.985c0.761,0.797,1.76,0.771,2.205,0.855c1.6,0.153,6.8,0.201,6.8,0.201 s4.203-0.006,7.001-0.209c0.391-0.047,1.243-0.051,2.004-0.847c0.6-0.607,0.795-1.985,0.795-1.985s0.2-1.618,0.2-3.237v-1.517 C22,9.62,21.8,8.001,21.8,8.001z M9.935,14.594l-0.001-5.62l5.404,2.82L9.935,14.594z">
+                    </path>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg col-sm-6 footer-widget-area"><div id="nav_menu-2" class="widget widget_nav_menu"><h6>Products</h6><div class="menu-footer-product-menu-container"><ul id="menu-footer-product-menu" class="menu"><li id="menu-item-37977" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37977"><a href="https://stackify.com/retrace/">Retrace</a></li>
+        <li id="menu-item-37985" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37985"><a href="https://stackify.com/prefix/">Prefix</a></li>
+        <li id="menu-item-49" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-49"><a target="_blank" rel="noopener" href="https://www.netreo.com/">Netreo</a></li>
+        <li id="menu-item-38002" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38002"><a href="https://stackify.com/retrace-apm-dotnet/">.NET Monitoring</a></li>
+        <li id="menu-item-38020" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38020"><a href="https://stackify.com/retrace-apm-java/">Java Monitoring</a></li>
+        <li id="menu-item-38021" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38021"><a href="https://stackify.com/retrace-apm-php/">PHP Monitoring</a></li>
+        <li id="menu-item-38022" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38022"><a href="https://stackify.com/retrace-apm-nodejs/">Node.js Monitoring</a></li>
+        <li id="menu-item-38023" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38023"><a href="https://stackify.com/retrace-apm-ruby/">Ruby Monitoring</a></li>
+        <li id="menu-item-38026" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38026"><a href="https://stackify.com/retrace-apm-python/">Python Monitoring</a></li>
+        <li id="menu-item-38048" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-38048"><a href="https://stackify.com/new-relic-alternatives-for-developers/">Retrace vs New Relic</a></li>
+        <li id="menu-item-38052" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-38052"><a href="https://stackify.com/retrace-vs-microsoft-application-insights-alternative/">Retrace vs Application Insights</a></li>
+      </ul></div></div></div>
+      <div class="col-lg col-sm-6 footer-widget-area"><div id="nav_menu-3" class="widget widget_nav_menu"><h6>Solutions</h6><div class="menu-footer-solutions-menu-container"><ul id="menu-footer-solutions-menu" class="menu"><li id="menu-item-38162" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38162"><a href="https://stackify.com/retrace-application-performance-management/">Application Performance Management</a></li>
+        <li id="menu-item-38167" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38167"><a href="https://stackify.com/retrace-log-management/">Centralized Logging</a></li>
+        <li id="menu-item-38179" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38179"><a href="https://stackify.com/retrace-code-profiling/">Full Transaction Tracing</a></li>
+        <li id="menu-item-38180" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38180"><a href="https://stackify.com/retrace-error-monitoring/">Error Tracking</a></li>
+        <li id="menu-item-38181" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38181"><a href="https://stackify.com/retrace-app-monitoring/">Application &amp; Server Monitoring</a></li>
+        <li id="menu-item-38182" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38182"><a href="https://stackify.com/retrace-real-user-monitoring/">Real User Monitoring</a></li>
+        <li id="menu-item-38183" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38183"><a href="https://stackify.com/retrace-deployment-tracking/">Retrace Deployment Tracking</a></li>
+        <li id="menu-item-38186" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38186"><a href="https://stackify.com/continuous-application-improvement-for-developers/">For Developers</a></li>
+        <li id="menu-item-38187" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38187"><a href="https://stackify.com/continuous-application-improvement-for-devops/">For DevOps</a></li>
+      </ul></div></div></div>
+      <div class="col-lg col-sm-6 footer-widget-area"><div id="nav_menu-4" class="widget widget_nav_menu"><h6>Resources</h6><div class="menu-footer-resources-menu-container"><ul id="menu-footer-resources-menu" class="menu"><li id="menu-item-38075" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38075"><a href="https://stackify.com/retrace-application-performance-management/">What is APM?</a></li>
+        <li id="menu-item-38080" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38080"><a href="https://stackify.com/pricing/">Pricing</a></li>
+        <li id="menu-item-38137" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38137"><a href="https://stackify.com/stackify-case-studies/">Case Studies</a></li>
+        <li id="menu-item-38140" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38140"><a href="https://stackify.com/blog/">Blog</a></li>
+        <li id="menu-item-72" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-72"><a target="_blank" rel="noopener" href="https://docs.stackify.com/v1/docs?_ga=2.17885433.1503138843.1679029594-2108393730.1669719605">Documentation</a></li>
+        <li id="menu-item-38144" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38144"><a href="https://stackify.com/stackify-developer-ebooks/">Free eBooks</a></li>
+        <li id="menu-item-38146" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38146"><a href="https://stackify.com/stackify-webinars/">Free Webinars</a></li>
+        <li id="menu-item-75" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-75"><a target="_blank" rel="noopener" href="https://www.youtube.com/stackify">Videos</a></li>
+        <li id="menu-item-38150" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38150"><a href="https://stackify.com/roi-calculator/">ROI Calculator</a></li>
+        <li id="menu-item-38151" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38151"><a href="https://stackify.com/support/">Support</a></li>
+      </ul></div></div></div>
+      <div class="col-lg col-sm-6 footer-widget-area"><div id="nav_menu-5" class="widget widget_nav_menu"><h6>Company</h6><div class="menu-footer-company-menu-container"><ul id="menu-footer-company-menu" class="menu"><li id="menu-item-36448" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36448"><a href="https://stackify.com/about/">About Us</a></li>
+        <li id="menu-item-36464" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36464"><a href="https://stackify.com/news-press/">News</a></li>
+        <li id="menu-item-36455" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36455"><a href="https://stackify.com/careers/">Careers</a></li>
+        <li id="menu-item-36466" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36466"><a href="https://stackify.com/gdpr/">GDPR</a></li>
+        <li id="menu-item-36470" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36470"><a href="https://stackify.com/stackify-security-information/">Security Information</a></li>
+        <li id="menu-item-36492" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36492"><a href="https://stackify.com/terms-conditions/">Terms &amp; Conditions</a></li>
+        <li id="menu-item-36476" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-36476"><a href="https://stackify.com/privacy-policy/">Privacy Policy</a></li>
+      </ul></div></div></div> </div>
+    <hr>
+    <div class="footer-bottom">
+      <div class="row">
+        <div class="col-sm-6 mb-md-0 mb-2 order-sm-last">
+          <div class="d-flex gap-2 justify-content-md-end">
+<span>
+<a href="https://stackify.com/contact-us/">Contact Us</a>
+</span>
+            <span>|</span>
+            <span>
+<a href="https://stackify.com/demo-request/">Request a Demo</a>
+</span>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <span>2023 &copy; Copyright. Stackify All rights reserved.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="progress-wrap cursor-pointer">
+  <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+    <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 304.139;">
+    </path>
+  </svg>
+</div>
+</body>
+</html>
